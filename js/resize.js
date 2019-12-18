@@ -1,3 +1,5 @@
+
+
 var win = document.getElementById("right");
 var lay = document.getElementById("p5container");
 var menu = document.getElementById("left");
@@ -9,7 +11,7 @@ var newScale = 1;
 function updateScale() {
     boundWin = win.getBoundingClientRect();
     var ww = window.innerWidth-210;
-    console.log(boundWin);
+    //console.log(boundWin);
     var wh = boundWin.height;
 
 

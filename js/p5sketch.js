@@ -4,18 +4,25 @@ const s = ( sketch ) => {
   let yRange = document.getElementById("yRange");
   let xOffset = document.getElementById("xOffset");
   let yOffset = document.getElementById("yOffset");
+  let video;
+  let vidSize;
+  let multx;
+  let multy;
+  let vid = "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/6c/Polar_orbit.ogv/Polar_orbit.ogv.360p.vp9.webm";
   xRange.oninput = function(){
     sketch.setMatrix(xRange.value, yRange.value, xOffset.value, yOffset.value);
+    sketch.vidLoad(vid);
   }
   yRange.oninput = function(){
     sketch.setMatrix(xRange.value, yRange.value, xOffset.value, yOffset.value);
+    sketch.vidLoad(vid);
   }
   xOffset.oninput = function(){
     sketch.setMatrix(xRange.value, yRange.value, xOffset.value, yOffset.value);
   }
   yOffset.oninput = function(){
     sketch.setMatrix(xRange.value, yRange.value, xOffset.value, yOffset.value);
-    console.log(xOffset.value, yOffset.value);
+    //console.log(xOffset.value, yOffset.value);
   }
   let parent = document.getElementById('p5container');
   let position = parent.getBoundingClientRect();
@@ -35,11 +42,15 @@ const s = ( sketch ) => {
     cnv = sketch.createCanvas(parent.offsetWidth, parent.offsetHeight);
     cnv.id("p5Canvas");
     sketch.setMatrix(xRange.value, yRange.value, xOffset.value, yOffset.value);
-    sketch.colorMode(sketch.HSB, 360, 255, 255);
+    //sketch.colorMode(sketch.HSB, 360, 255, 255);
     keystoner = new Keystoner("p5Canvas");
+    //sketch.vidLoad('./vid/file_example_MOV_480_700kB.mov');
+    //sketch.vidLoad("./vid/big-buck-bunny_trailer.webm");
+    sketch.vidLoad(vid);
     updateScale();
     window.onresize = updateScale;
     document.getElementById("checkKeystone").onchange = function(){keystoner.toggleShow()}
+    document.getElementById("muteVideo").onchange = function(){sketch.toggleVidMute()}
   };
 
   sketch.draw = () => {
@@ -60,14 +71,49 @@ const s = ( sketch ) => {
     }
 
   };
+
+  sketch.vidLoad = (vid) => {
+    if(video){
+      video.remove();
+    }
+
+    video = sketch.createVideo([vid]);
+    video.loop();
+    if(document.getElementById("muteVideo").checked){
+      video.volume(0);
+    }
+
+
+    vidSize = video.size();
+    video.size(mat_x,mat_y);
+    video.loadPixels();
+    //video.hide();
+  }
+  sketch.toggleVidMute = () => {
+    if(video.volume()==0){
+      video.volume(1);
+    } else {
+      video.volume(0);
+    }
+
+  }
+
   sketch.drawMatrix = () => {
     sketch.noStroke();
+    video.loadPixels();
     for(let i = 0; i < mat_x; i++){
       for(let j = 0; j < mat_y; j++){
-        let millisval = sketch.millis();
-        let noiseval = sketch.noise(i/noiseScale,j/noiseScale, millisval/10000)
-        sketch.fill((200+millisval/30+noiseval*100)%360,155,noiseval*255,1);
+        //let millisval = sketch.millis();
+        //let noiseval = sketch.noise(i/noiseScale,j/noiseScale, millisval/10000)
+        //sketch.fill((200+millisval/30+noiseval*100)%360,155,noiseval*255,1);
+        mult_x = 1;
+        mult_y = mat_x;
 
+        let r = video.pixels[((i*mult_x)+(j*mult_y))*4];
+        let g = video.pixels[((i*mult_x)+(j*mult_y))*4+1];
+        let b = video.pixels[((i*mult_x)+(j*mult_y))*4+2];
+
+        sketch.fill(r,g,b);
 
         sketch.push();
 

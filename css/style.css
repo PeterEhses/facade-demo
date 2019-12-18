@@ -4,6 +4,11 @@ html{
 p{
   padding: 0 1rem;
 }
+
+video{
+  position: fixed;
+}
+
   #p5container {
   right: 0;
   transform-origin: center right;

@@ -59,3 +59,12 @@ class dropBoi {
 const dropBG = new dropBoi( "bgForm", "p5container", "bgFileElem")
 
 const dropOL = new dropBoi( "olForm", "p5overlay", "olFileElem")
+
+const dropVID = new dropBoi( "viForm", "", "viFileElem")
+dropVID.handleFile = function(file){
+  let filereader = new FileReader();
+  filereader.readAsDataURL(file);
+  filereader.onload = function(){
+    myp5.vidLoad(filereader.result);
+  }
+}

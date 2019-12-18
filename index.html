@@ -2,6 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
     <title>facade visualizer</title>
 
     <link rel="stylesheet" href="./css/normalize.css">
@@ -39,11 +41,18 @@
           <input type="file" id="olFileElem" class="fileelement" accept="image/*">
           <label class="button" for="olFileElem">Overlay</label>
         </form>
+        <form id="viForm" class="upload-form">
+          <p>drag & drop new video</p>
+          <input type="file" id="viFileElem" class="fileelement" accept="video/*">
+          <label class="button" for="viFileElem">Video</label>
+        </form>
+        <h3>Mute Video</h3>
+        <input type="checkbox" name="muteVideo" id="muteVideo" checked>
       </div>
 
       </div>
       <div class="footer">
-        <a href="http://www.peter-ehses.de">© Peter Ehses 2019 — v1.3</a>
+        <a href="http://www.peter-ehses.de">© Peter Ehses 2019 — v1.4</a>
       </div>
     </div>
     </div>
