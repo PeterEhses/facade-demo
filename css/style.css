@@ -1,0 +1,155 @@
+html{
+  font-size: 12px;
+  }
+p{
+  padding: 0 1rem;
+}
+  #p5container {
+  right: 0;
+  transform-origin: center right;
+  width: 1066px;
+  height: 800px;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../img/3.png");
+}
+
+#p5overlay{
+position:absolute;
+z-index: 9001;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+background-image: url("../img/overlay.png");
+}
+
+#p5Canvas{
+  transform-origin: 0 0;
+  transform: matrix3d(0.12343383780831975, -0.16402503969825358, 0, -0.00032093943695343715, -0.044697742886094814, 0.30616501280244185, 0, -0.000055124877626755905, 0, 0, 1, 0, 420.19272137046306, 197.2465581977472, 0, 1);
+  mix-blend-mode: lighten;
+  z-index: 1;
+}
+
+.fileelement{
+  display:none;
+}
+.corner {
+  position: absolute;
+  z-index: 10000;
+  transform-origin: center;
+  transform: translate(-5px, -5px);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(0, 127, 255, 0.5);
+}
+
+.corner:hover {
+  background: rgba(0, 127, 255, 1);
+}
+
+.corner:after {
+  content: '.';
+  visibility: hidden;
+}
+
+.upload-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 1px solid rgb(238, 238, 238);
+  width: 100%;
+  height: 90px;
+  text-align: center;
+  margin-top: 20px;
+}
+.upload-form.highlight{
+  border-color: purple;
+}
+
+.button {
+  padding: 10px;
+  width: 80%;
+  display: block;
+  text-align: center;
+  margin: 0.6rem;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+  color: black;
+  cursor: pointer;
+  border: 1px solid rgb(238, 238, 238);
+}
+.button:hover {
+  background: #ddd;
+}
+h3{
+  font-family: 'Varela Round', sans-serif;
+}
+body{
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  width:100vw;
+  height:100vh;
+  display: flex;
+  overflow:hidden;
+  background: url(http://api.thumbr.it/whitenoise-361x370.png?background=1a1a1aff&noise=ffffff&density=25&opacity=5);
+}
+.left-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+position:relative;
+width:20vw;
+min-width: 210px;
+height: 100vh;
+overflow-y: auto;
+overflow-x: hidden;
+}
+.right-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  right: 0;
+  margin-left: auto;
+  position:relative;
+  width:80vw;
+  height: 100vh;
+}
+
+.slider{
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.control-wrap{
+  max-width: 300px;
+  margin: auto;
+  padding: 24px;
+}
+
+.footer{
+  position: relative;
+  bottom: 1rem;
+
+  color: rgb(60,60,60);
+  text-align: center;
+}
+.footer a{
+  text-decoration: none;
+  color: rgb(60,60,60);
+}
+.wrappy-boi{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  height: 100%;
+}

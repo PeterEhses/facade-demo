@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>facade visualizer</title>
+
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Varela+Round&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="left-column" id="left">
+      <div class="wrappy-boi">
+      <div class="control-wrap">
+
+
+      <div class="controls">
+        <h1>facade visualizer</h1>
+        <h3>X Window Count</h3>
+        <input type="number" min="1" max="50" value="25" class="slider" id="xRange">
+        <h3>Y Window Count</h3>
+        <input type="number" min="1" max="50" value="9" class="slider" id="yRange">
+        <h3>X Window Spacing</h3>
+        <input type="range" min="0" max="50" value="14" class="slider" id="xOffset">
+        <h3>Y Window Spacing</h3>
+        <input type="range" min="0" max="50" value="28" class="slider" id="yOffset">
+        <h3>Show Keystone</h3>
+        <input type="checkbox" name="doKeystone" id="checkKeystone">
+      </div>
+      <div class="uploads">
+        <form id="bgForm" class="upload-form">
+          <p>drag & drop new background image</p>
+          <input type="file" id="bgFileElem" class="fileelement" accept="image/*">
+          <label class="button" for="bgFileElem">Background</label>
+        </form>
+        <form id="olForm" class="upload-form">
+          <p>drag & drop new overlay image</p>
+          <input type="file" id="olFileElem" class="fileelement" accept="image/*">
+          <label class="button" for="olFileElem">Overlay</label>
+        </form>
+      </div>
+
+      </div>
+      <div class="footer">
+        <a href="http://www.peter-ehses.de">© Peter Ehses 2019 — v1.3</a>
+      </div>
+    </div>
+    </div>
+    <div class="right-column" id="right">
+      <div id="p5container">
+        <div id="p5overlay">
+
+        </div></div>
+
+    </div>
+
+
+  </body>
+  <script src="./js/numeric.min.js" charset="utf-8"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js" charset="utf-8"></script>
+
+
+  <script src="./js/draganddrop.js" charset="utf-8"></script>
+  <script src="./js/keystone.js" charset="utf-8"></script>
+  <script src="./js/p5sketch.js" charset="utf-8"></script>
+  <script src="./js/resize.js" charset="utf-8"></script>
+
+
+</html>
