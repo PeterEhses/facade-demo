@@ -113,7 +113,7 @@ const s = ( sketch ) => {
         let g = video.pixels[((i*mult_x)+(j*mult_y))*4+1];
         let b = video.pixels[((i*mult_x)+(j*mult_y))*4+2];
 
-        sketch.fill(r,g,b);
+        sketch.fill(r,g,b,125);
 
         sketch.push();
 

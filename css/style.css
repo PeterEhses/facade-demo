@@ -18,7 +18,7 @@ video{
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url("../img/3.png");
+  background-image: url("../img/01_Background_v2.png");
 }
 
 #p5overlay{
@@ -31,12 +31,12 @@ left: 0;
 background-size: contain;
 background-repeat: no-repeat;
 background-position: center;
-background-image: url("../img/overlay.png");
+background-image: url("../img/02_Maskierung_v2.png");
 }
 
 #p5Canvas{
   transform-origin: 0 0;
-  transform: matrix3d(0.12343383780831975, -0.16402503969825358, 0, -0.00032093943695343715, -0.044697742886094814, 0.30616501280244185, 0, -0.000055124877626755905, 0, 0, 1, 0, 420.19272137046306, 197.2465581977472, 0, 1);
+  transform: matrix3d(0.18485732709111108, -0.1480582260749479, 0, -0.00024385245381964324, -0.04341904786916562, 0.26392036002868735, 0, -0.00007679197602209731, 0, 0, 1, 0, 276.0278388318245, 274.09470752089135, 0, 1);
   mix-blend-mode: lighten;
   z-index: 1;
 }

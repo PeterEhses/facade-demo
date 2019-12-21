@@ -138,7 +138,7 @@ class Keystoner {
         }
       }
       this.bound.style['transform'] = 'matrix3d(' + matStr + ')';
-      //console.log('matrix3d(' + matStr + ')');
+      console.log('matrix3d(' + matStr + ')');
       this.cornerAction = false;
     }
   }
